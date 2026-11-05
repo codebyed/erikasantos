@@ -24,10 +24,10 @@ export function BadgeStage() {
       </svg>
 
       {/* Crachá suspenso */}
-      <div className="relative z-10 flex flex-col items-center -mt-6 sm:-mt-8 md:-mt-12 -translate-x-3 sm:-translate-x-4 md:-translate-x-5 hover-swing cursor-pointer group">
+      <div className="relative z-10 flex flex-col items-center -mt-6 sm:-mt-8 md:-mt-12 -translate-x-2 sm:-translate-x-3 md:-translate-x-4 hover-swing cursor-pointer group">
 
         {/* Fita superior de suspensão */}
-        <div className="relative w-8 sm:w-10 md:w-12 h-14 sm:h-16 md:h-20 bg-gradient-to-b from-[#102E4A] via-[#102E4A] to-[#6486AC] shadow-md rounded-t-sm flex justify-center">
+        <div className="relative w-6 sm:w-8 md:w-10 h-14 sm:h-16 md:h-20 bg-gradient-to-b from-[#102E4A] via-[#102E4A] to-[#6486AC] shadow-md rounded-t-sm flex justify-center">
 
           {/* Furo central para o prego */}
           <div className="absolute top-3 sm:top-4 w-3 sm:w-3.5 h-3 sm:h-3.5 rounded-full bg-[#F5EEE1] border border-[#6486AC]/50 shadow-inner"></div>
