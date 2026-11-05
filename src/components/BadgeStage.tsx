@@ -26,18 +26,19 @@ export function BadgeStage() {
       </svg>
 
       <svg viewBox="0 0 24 24" className="w-4 h-4 fill-[#6486AC] absolute bottom-6 sm:bottom-8 right-8 sm:right-12 opacity-70 pointer-events-none">
-        <path d="M12 0c1.1 7.4 4.6 10.9 12 12-7.4 1.1-10.9 4.6-12 12-1.1-7.4-4.6-10.9-12-12 7.4-1.1 10.9-4.6 12-12z" />
+        <path d="M12 0c1.1 7.4 4.6 10.9 12 12-7.4-1.1-10.9 4.6-12 12-1.1-7.4-4.6-10.9-12-12 7.4-1.1 10.9-4.6 12-12z" />
       </svg>
 
       {/* Crachá Suspenso Transparente com Balanço no Hover */}
       <div className="relative z-10 flex flex-col items-center -mt-7 sm:-mt-9 md:-mt-12 -translate-x-2 sm:-translate-x-3 md:-translate-x-4 hover-swing cursor-pointer group">
+        
         {/* Cordão do crachá */}
         <div className="w-3.5 sm:w-4 h-6 sm:h-8 bg-gradient-to-b from-[#102E4A] via-[#102E4A]/80 to-[#6486AC] rounded-t-xs sm:rounded-t-sm shadow-xs mb-[-3px] sm:mb-[-4px] z-20 flex items-center justify-center">
           <div className="w-1.5 h-1.5 rounded-full bg-[#E7DDC9]"></div>
         </div>
 
         {/* Imagem do Crachá com Fundo Transparente */}
-        <div className="bg-transparent filter drop-shadow-[0_15px_20px_rgba(16,46,74,0.18)]">
+        <div className="bg-transparent filter drop-shadow-[0_15px_20px_rgba(16,46,74,0.18)] -mt-8 sm:-mt-9 md:-mt-10">
           <img
             src="./erikasantos-assets/badge-erika-trim.png"
             alt="Crachá Érika Designer"
