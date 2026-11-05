@@ -2,10 +2,11 @@
 export function BadgeStage() {
   return (
     <div className="relative flex justify-center items-start pt-1 sm:pt-0 min-h-[380px] sm:min-h-[460px] md:min-h-[560px] w-full max-w-[360px] sm:max-w-[420px] md:max-w-none mx-auto overflow-visible">
+
       {/* Glow Radial de fundo */}
       <div className="absolute top-8 sm:top-10 w-[280px] sm:w-[340px] md:w-[440px] h-[280px] sm:h-[340px] md:h-[440px] rounded-full [background-image:radial-gradient(ellipse_50%_50%_at_50%_50%,_#E8EFF7_0%,_#F5EEE1_72%,_#F9F3E3_100%)] -z-10 opacity-90 pointer-events-none"></div>
 
-      {/* Arcos decorativos do design */}
+      {/* Arcos decorativos */}
       <svg
         viewBox="0 0 220 120"
         className="w-[160px] sm:w-[200px] md:w-[260px] h-[80px] sm:h-[100px] md:h-[130px] opacity-35 absolute -left-2 sm:-left-4 md:-left-8 top-44 sm:top-52 pointer-events-none -z-5"
@@ -21,24 +22,23 @@ export function BadgeStage() {
       </svg>
 
       {/* Brilhos / Sparkles */}
-      <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-[#102E4A] absolute top-8 sm:top-12 left-6 sm:left-10 opacity-80 animate-pulse pointer-events-none">
+      <svg
+        viewBox="0 0 24 24"
+        className="w-3.5 h-3.5 fill-[#102E4A] absolute top-8 sm:top-12 left-6 sm:left-10 opacity-80 animate-pulse pointer-events-none"
+      >
         <path d="M12 0c1.1 7.4 4.6 10.9 12 12-7.4 1.1-10.9 4.6-12 12-1.1-7.4-4.6-10.9-12-12 7.4-1.1 10.9-4.6 12-12z" />
       </svg>
 
-      <svg viewBox="0 0 24 24" className="w-4 h-4 fill-[#6486AC] absolute bottom-6 sm:bottom-8 right-8 sm:right-12 opacity-70 pointer-events-none">
-        <path d="M12 0c1.1 7.4 4.6 10.9 12 12-7.4-1.1-10.9 4.6-12 12-1.1-7.4-4.6-10.9-12-12 7.4-1.1 10.9-4.6 12-12z" />
+      <svg
+        viewBox="0 0 24 24"
+        className="w-4 h-4 fill-[#6486AC] absolute bottom-6 sm:bottom-8 right-8 sm:right-12 opacity-70 pointer-events-none"
+      >
+        <path d="M12 0c1.1 7.4 4.6 10.9 12 12-7.4 1.1-10.9 4.6-12 12-1.1-7.4-4.6-10.9-12-12 7.4-1.1 10.9-4.6 12-12z" />
       </svg>
 
-      {/* Crachá Suspenso Transparente com Balanço no Hover */}
-      <div className="relative z-10 flex flex-col items-center -mt-7 sm:-mt-9 md:-mt-12 -translate-x-2 sm:-translate-x-3 md:-translate-x-4 hover-swing cursor-pointer group">
-        
-        {/* Cordão do crachá */}
-        <div className="w-3.5 sm:w-4 h-6 sm:h-8 bg-gradient-to-b from-[#102E4A] via-[#102E4A]/80 to-[#6486AC] rounded-t-xs sm:rounded-t-sm shadow-xs mb-[-3px] sm:mb-[-4px] z-20 flex items-center justify-center">
-          <div className="w-1.5 h-1.5 rounded-full bg-[#E7DDC9]"></div>
-        </div>
-
-        {/* Imagem do Crachá com Fundo Transparente */}
-        <div className="bg-transparent filter drop-shadow-[0_15px_20px_rgba(16,46,74,0.18)] -mt-8 sm:-mt-9 md:-mt-10">
+      {/* Crachá original com cordão integrado */}
+      <div className="relative z-10 flex justify-center items-center -mt-4 sm:-mt-6 md:-mt-10 -translate-x-2 sm:-translate-x-3 md:-translate-x-4 hover-swing cursor-pointer group">
+        <div className="bg-transparent filter drop-shadow-[0_15px_20px_rgba(16,46,74,0.18)]">
           <img
             src="./erikasantos-assets/badge-erika-trim.png"
             alt="Crachá Érika Designer"
