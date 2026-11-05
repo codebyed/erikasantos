@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #102E4A;
+  --color-blue: #6486AC;
+  --color-cream: #F9F3E3;
+  --color-cream-card: #FFFCF5;
+  --color-gray: #B1B2B6;
+  --color-ink: #102E4A;
+  --color-ink-soft: #4C6B8C;
+  --color-line: #E7DDC9;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Poppins", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: #F9F3E3;
+  color: #102E4A;
+}
