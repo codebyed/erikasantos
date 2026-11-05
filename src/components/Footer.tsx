@@ -28,6 +28,18 @@ export function Footer() {
           >
             @erik4.designer
           </a>
+          <span className="hidden sm:inline">•</span>
+          <span>
+            Desenvolvido por{" "}
+            <a
+              href="https://codebyed.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#102E4A] underline decoration-[#6486AC] font-semibold"
+            >
+              codebyed
+            </a>
+          </span>
         </div>
       </div>
     </footer>
