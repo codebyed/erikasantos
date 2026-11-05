@@ -10,25 +10,9 @@ export function Footer() {
             érika designer
           </span>
         </div>
-        <div className="flex flex-wrap items-center justify-center md:justify-end gap-2 sm:gap-4 text-center">
-          <span>© 2026 Érika Santos · Design com estratégia</span>
-          <span className="hidden sm:inline">•</span>
-          <a
-            href="https://erikasantos.com.br"
-            className="hover:text-[#102E4A] underline decoration-[#6486AC]"
-          >
-            erikasantos.com.br
-          </a>
-          <span className="hidden sm:inline">•</span>
-          <a
-            href="https://instagram.com/erik4.designer"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-[#102E4A]"
-          >
-            @erik4.designer
-          </a>
-          <span className="hidden sm:inline">•</span>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center md:justify-end gap-1 sm:gap-4 text-center">
+          <span>© 2026 Érika Santos · Todos os direitos reservados.</span>
           <span>
             Desenvolvido por{" "}
             <a
