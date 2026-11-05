@@ -1,4 +1,3 @@
-
 export function BadgeStage() {
   return (
     <div className="relative flex justify-center items-start pt-1 sm:pt-0 min-h-[380px] sm:min-h-[460px] md:min-h-[560px] w-full max-w-[360px] sm:max-w-[420px] md:max-w-none mx-auto overflow-visible">
@@ -11,34 +10,61 @@ export function BadgeStage() {
         viewBox="0 0 220 120"
         className="w-[160px] sm:w-[200px] md:w-[260px] h-[80px] sm:h-[100px] md:h-[130px] opacity-35 absolute -left-2 sm:-left-4 md:-left-8 top-44 sm:top-52 pointer-events-none -z-5"
       >
-        <path d="M0 110c60-70 140-100 220-110" fill="none" stroke="#6486AC" strokeWidth="1" />
+        <path
+          d="M0 110c60-70 140-100 220-110"
+          fill="none"
+          stroke="#6486AC"
+          strokeWidth="1"
+        />
       </svg>
 
       <svg
         viewBox="0 0 150 100"
         className="w-[100px] sm:w-[130px] md:w-[170px] h-[65px] sm:h-[80px] md:h-[110px] opacity-30 absolute right-0 sm:right-2 md:-right-4 top-28 sm:top-36 pointer-events-none -z-5"
       >
-        <path d="M0 0c40 40 90 70 150 100" fill="none" stroke="#6486AC" strokeWidth="1" />
+        <path
+          d="M0 0c40 40 90 70 150 100"
+          fill="none"
+          stroke="#6486AC"
+          strokeWidth="1"
+        />
       </svg>
 
       {/* Brilhos / Sparkles */}
-      <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-[#102E4A] absolute top-8 sm:top-12 left-6 sm:left-10 opacity-80 animate-pulse pointer-events-none">
+      <svg
+        viewBox="0 0 24 24"
+        className="w-3.5 h-3.5 fill-[#102E4A] absolute top-8 sm:top-12 left-6 sm:left-10 opacity-80 animate-pulse pointer-events-none"
+      >
         <path d="M12 0c1.1 7.4 4.6 10.9 12 12-7.4 1.1-10.9 4.6-12 12-1.1-7.4-4.6-10.9-12-12 7.4-1.1 10.9-4.6 12-12z" />
       </svg>
 
-      <svg viewBox="0 0 24 24" className="w-4 h-4 fill-[#6486AC] absolute bottom-6 sm:bottom-8 right-8 sm:right-12 opacity-70 pointer-events-none">
+      <svg
+        viewBox="0 0 24 24"
+        className="w-4 h-4 fill-[#6486AC] absolute bottom-6 sm:bottom-8 right-8 sm:right-12 opacity-70 pointer-events-none"
+      >
         <path d="M12 0c1.1 7.4 4.6 10.9 12 12-7.4 1.1-10.9 4.6-12 12-1.1-7.4-4.6-10.9-12-12 7.4-1.1 10.9-4.6 12-12z" />
       </svg>
 
-      {/* Crachá Suspenso Transparente */}
+      {/* Crachá Suspenso Transparente com Balanço no Hover */}
       <div className="relative z-10 flex flex-col items-center -mt-4 sm:-mt-6 md:-mt-10 hover-swing cursor-pointer group">
 
-        {/* Cordão do crachá */}
-        <div className="relative -translate-x-1 w-3 sm:w-3.5 h-6 sm:h-8 bg-gradient-to-b from-[#102E4A] via-[#102E4A]/80 to-[#6486AC] rounded-t-xs sm:rounded-t-sm shadow-xs mb-[-7px] sm:mb-[-8px] z-20 flex items-center justify-center">
-          <div className="w-1.5 h-1.5 rounded-full bg-[#E7DDC9]"></div>
+        {/* Fita azul do crachá */}
+        <div className="relative -translate-x-1 w-3.5 sm:w-4 h-9 sm:h-10 bg-gradient-to-b from-[#102E4A] via-[#102E4A]/90 to-[#6486AC] rounded-t-sm shadow-sm mb-[-3px] sm:mb-[-4px] z-20 flex items-center justify-center">
+
+          {/* Detalhe superior da fita */}
+          <div className="absolute top-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-br from-white to-[#AEB5BD] shadow-sm"></div>
+
         </div>
 
-        {/* Imagem do Crachá */}
+        {/* Encaixe prateado entre a fita e o crachá */}
+        <div className="relative -translate-x-1 z-30 w-5 sm:w-6 h-6 sm:h-7 -mt-1 mb-[-9px] sm:mb-[-10px] rounded-sm border border-[#858C94] bg-gradient-to-r from-[#777F88] via-[#F5F6F7] to-[#858C94] shadow-[0_2px_5px_rgba(0,0,0,0.25)] flex items-center justify-center">
+
+          {/* Reflexo metálico central */}
+          <div className="w-1.5 sm:w-2 h-full rounded-sm bg-gradient-to-r from-[#A3AAB2] via-white to-[#A3AAB2] shadow-inner"></div>
+
+        </div>
+
+        {/* Imagem do Crachá com Fundo Transparente */}
         <div className="bg-transparent filter drop-shadow-[0_15px_20px_rgba(16,46,74,0.18)]">
           <img
             src="./erikasantos-assets/badge-erika-trim.png"
@@ -46,6 +72,7 @@ export function BadgeStage() {
             className="w-[200px] sm:w-[245px] md:w-[285px] h-auto object-contain bg-transparent block"
           />
         </div>
+
       </div>
 
       {/* Selos flutuantes responsivos */}
@@ -63,7 +90,7 @@ export function BadgeStage() {
 
       <img
         src="./erikasantos-assets/seal-gray.png"
-        alt="Selo Érika Designer"
+        alt="Selo érika designer"
         className="absolute bottom-2 sm:bottom-4 md:bottom-6 right-2 sm:right-6 md:right-8 w-18 sm:w-24 md:w-30 h-18 sm:h-24 md:h-30 -rotate-[6deg] z-20 drop-shadow-md pointer-events-none sm:pointer-events-auto"
       />
 
@@ -80,5 +107,5 @@ export function BadgeStage() {
       />
 
     </div>
-  )
+  );
 }
