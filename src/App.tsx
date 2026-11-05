@@ -5,7 +5,7 @@ export default function App() {
   const [selectedService, setSelectedService] = useState('Social Media')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  // Form states
+  // Form states for contact
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
@@ -22,64 +22,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#F9F3E3] text-[#102E4A] font-[Poppins,system-ui,sans-serif] selection:bg-[#6486AC] selection:text-[#F9F3E3]">
-      {/* Top Banner with Pencil Exports Shortcut */}
-      <div className="bg-[#102E4A] text-[#F9F3E3] text-xs py-2 px-4 border-b border-[#6486AC]/30">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span className="font-semibold tracking-wide uppercase text-[10px]">Pencil Tailwind Export</span>
-            <span className="hidden sm:inline text-[#6486AC]">•</span>
-            <span className="text-[#F9F3E3]/80">Projeto Érika Santos</span>
-          </div>
-          <div className="flex items-center gap-2 sm:gap-3 text-[11px] overflow-x-auto">
-            <span className="text-[#6486AC] font-medium hidden md:inline">Arquivos exportados:</span>
-            <a
-              href="/index-desktop.html"
-              target="_blank"
-              rel="noreferrer"
-              className="px-2 py-0.5 rounded bg-white/10 hover:bg-white/20 transition text-[#F9F3E3]"
-            >
-              Início Desktop ↗
-            </a>
-            <a
-              href="/index-mobile.html"
-              target="_blank"
-              rel="noreferrer"
-              className="px-2 py-0.5 rounded bg-white/10 hover:bg-white/20 transition text-[#F9F3E3]"
-            >
-              Início Mobile ↗
-            </a>
-            <a
-              href="/servicos-desktop.html"
-              target="_blank"
-              rel="noreferrer"
-              className="px-2 py-0.5 rounded bg-white/10 hover:bg-white/20 transition text-[#F9F3E3]"
-            >
-              Serviços ↗
-            </a>
-            <a
-              href="/contato-desktop.html"
-              target="_blank"
-              rel="noreferrer"
-              className="px-2 py-0.5 rounded bg-white/10 hover:bg-white/20 transition text-[#F9F3E3]"
-            >
-              Contato ↗
-            </a>
-            <a
-              href="/todos-telas.html"
-              target="_blank"
-              rel="noreferrer"
-              className="px-2 py-0.5 rounded bg-[#6486AC]/50 hover:bg-[#6486AC] transition text-white font-semibold"
-            >
-              Ver Todas Telas ↗
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Navigation */}
+      {/* Navigation Bar */}
       <header className="sticky top-0 z-50 bg-[#F9F3E3]/95 backdrop-blur-md border-b border-[#E7DDC9] px-6 md:px-16 py-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
           {/* Brand */}
           <button
             onClick={() => setActiveTab('home')}
@@ -147,7 +92,7 @@ export default function App() {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 rounded-lg text-[#102E4A] hover:bg-[#E7DDC9]/40"
-            aria-label="Abrir Menu"
+            aria-label="Menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               {mobileMenuOpen ? (
@@ -167,16 +112,20 @@ export default function App() {
                 setActiveTab('home')
                 setMobileMenuOpen(false)
               }}
-              className="block w-full text-left px-3 py-2 rounded-md hover:bg-[#E7DDC9]/50"
+              className={`block w-full text-left px-3 py-2 rounded-md ${
+                activeTab === 'home' ? 'bg-[#102E4A] text-[#F9F3E3]' : 'hover:bg-[#E7DDC9]/50'
+              }`}
             >
-              Início
+              Início (Link na Bio)
             </button>
             <button
               onClick={() => {
                 setActiveTab('services')
                 setMobileMenuOpen(false)
               }}
-              className="block w-full text-left px-3 py-2 rounded-md hover:bg-[#E7DDC9]/50"
+              className={`block w-full text-left px-3 py-2 rounded-md ${
+                activeTab === 'services' ? 'bg-[#102E4A] text-[#F9F3E3]' : 'hover:bg-[#E7DDC9]/50'
+              }`}
             >
               Serviços
             </button>
@@ -185,7 +134,9 @@ export default function App() {
                 setActiveTab('contact')
                 setMobileMenuOpen(false)
               }}
-              className="block w-full text-left px-3 py-2 rounded-md hover:bg-[#E7DDC9]/50"
+              className={`block w-full text-left px-3 py-2 rounded-md ${
+                activeTab === 'contact' ? 'bg-[#102E4A] text-[#F9F3E3]' : 'hover:bg-[#E7DDC9]/50'
+              }`}
             >
               Contato
             </button>
@@ -204,131 +155,144 @@ export default function App() {
         )}
       </header>
 
-      {/* Main Content Area */}
-      <main className="max-w-7xl mx-auto px-6 md:px-12 py-10 md:py-16">
-        {/* ======================= ABA 1: INÍCIO ======================= */}
+      {/* Main Content */}
+      <main className="max-w-6xl mx-auto px-6 md:px-12 py-8 md:py-14">
+        {/* ======================= ABA 1: LINK NA BIO (INÍCIO) ======================= */}
         {activeTab === 'home' && (
           <div className="space-y-16">
-            {/* Hero Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              {/* Visual Badges Stage */}
-              <div className="lg:col-span-5 relative flex justify-center items-center min-h-[460px] md:min-h-[520px]">
-                {/* Radial Glow */}
-                <div className="absolute w-[360px] md:w-[440px] h-[360px] md:h-[440px] rounded-full bg-gradient-to-tr from-[#E8EFF7] via-[#F5EEE1] to-[#F9F3E3] -z-10 blur-xl opacity-70"></div>
+            {/* Hero Section - Link na Bio */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-center">
+              {/* Visual Stage com Crachá & Selos flutuantes */}
+              <div className="lg:col-span-5 relative flex justify-center items-center min-h-[440px] md:min-h-[550px]">
+                {/* Glow Radial de fundo */}
+                <div className="absolute w-[340px] md:w-[440px] h-[340px] md:h-[440px] rounded-full [background-image:radial-gradient(ellipse_50%_50%_at_50%_50%,_#E8EFF7_0%,_#F5EEE1_72%,_#F9F3E3_100%)] -z-10 opacity-90"></div>
 
-                {/* Decorative Sparkles */}
+                {/* Arcos decorativos do design */}
                 <svg
-                  viewBox="0 0 24 24"
-                  className="w-4 h-4 fill-[#102E4A] absolute top-6 left-8 opacity-80 animate-pulse"
+                  viewBox="0 0 220 120"
+                  className="w-[200px] md:w-[260px] h-[100px] md:h-[130px] opacity-35 absolute -left-4 md:-left-8 top-44 pointer-events-none -z-5"
                 >
-                  <path d="M12 0c1.1 7.4 4.6 10.9 12 12-7.4 1.1-10.9 4.6-12 12-1.1-7.4-4.6-10.9-12-12 7.4-1.1 10.9-4.6 12-12z" />
+                  <path d="M0 110c60-70 140-100 220-110" fill="none" stroke="#6486AC" strokeWidth="1" />
                 </svg>
                 <svg
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5 fill-[#6486AC] absolute bottom-8 right-10 opacity-70"
+                  viewBox="0 0 150 100"
+                  className="w-[130px] md:w-[170px] h-[80px] md:h-[110px] opacity-30 absolute right-2 md:-right-4 top-24 pointer-events-none -z-5"
                 >
+                  <path d="M0 0c40 40 90 70 150 100" fill="none" stroke="#6486AC" strokeWidth="1" />
+                </svg>
+
+                {/* Brilhos / Sparkles pontuais */}
+                <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-[#102E4A] absolute top-6 left-10 opacity-80 animate-pulse">
+                  <path d="M12 0c1.1 7.4 4.6 10.9 12 12-7.4 1.1-10.9 4.6-12 12-1.1-7.4-4.6-10.9-12-12 7.4-1.1 10.9-4.6 12-12z" />
+                </svg>
+                <svg viewBox="0 0 24 24" className="w-4 h-4 fill-[#6486AC] absolute bottom-8 right-12 opacity-70">
                   <path d="M12 0c1.1 7.4 4.6 10.9 12 12-7.4 1.1-10.9 4.6-12 12-1.1-7.4-4.6-10.9-12-12 7.4-1.1 10.9-4.6 12-12z" />
                 </svg>
 
-                {/* Main Card / Badge Érika */}
-                <div className="relative z-10 w-[270px] md:w-[290px] h-[510px] md:h-[545px] rotate-[4deg] hover:rotate-0 transition-transform duration-500 shadow-2xl rounded-2xl overflow-hidden border border-[#102E4A]/10 bg-white">
+                {/* Crachá Érika Santos com leve rotação */}
+                <div className="relative z-10 w-[240px] md:w-[285px] h-[450px] md:h-[535px] rotate-[5deg] hover:rotate-0 transition-transform duration-500 shadow-2xl rounded-2xl overflow-hidden border border-[#102E4A]/10 bg-white">
                   <img
                     src="/erikasantos-assets/badge-erika-trim.png"
-                    alt="Crachá Érika Santos"
+                    alt="Crachá Érika Designer"
                     className="w-full h-full object-cover"
                   />
                 </div>
 
-                {/* Selos Flutuantes */}
+                {/* Selos flutuantes fiéis ao Pencil */}
+                {/* Selo circular azul */}
                 <img
                   src="/erikasantos-assets/seal-blue-circular.png"
                   alt="Selo circular"
-                  className="absolute -top-4 right-4 md:right-8 w-28 md:w-32 h-28 md:h-32 -rotate-12 z-20 drop-shadow-lg hover:scale-110 transition-transform duration-300"
+                  className="absolute -top-3 md:-top-5 right-2 md:right-4 w-28 md:w-34 h-28 md:h-34 -rotate-[8deg] z-20 drop-shadow-md hover:scale-105 transition-transform"
                 />
+                {/* Esfera mármore azul */}
                 <img
                   src="/erikasantos-assets/marble-blue-1.png"
                   alt="Esfera mármore"
-                  className="absolute top-44 right-2 md:-right-2 w-20 md:w-24 h-20 md:h-24 rotate-12 z-20 drop-shadow-md"
+                  className="absolute top-44 md:top-52 right-0 md:-right-2 w-20 md:w-26 h-20 md:h-26 rotate-[10deg] z-20 drop-shadow-md"
                 />
+                {/* Selo cinza érika designer */}
                 <img
                   src="/erikasantos-assets/seal-gray.png"
-                  alt="Selo Érika Designer"
-                  className="absolute bottom-6 right-6 md:right-12 w-24 md:w-28 h-24 md:h-28 -rotate-6 z-20 drop-shadow-md"
+                  alt="Selo érika designer"
+                  className="absolute bottom-4 md:bottom-6 right-6 md:right-8 w-24 md:w-30 h-24 md:h-30 -rotate-[6deg] z-20 drop-shadow-md"
                 />
+                {/* Selo estrela cream */}
                 <img
                   src="/erikasantos-assets/seal-cream-star.png"
                   alt="Selo estrela"
-                  className="absolute top-12 left-2 md:left-6 w-16 md:w-18 h-16 md:h-18 rotate-12 z-20 drop-shadow-md"
+                  className="absolute top-10 md:top-14 left-2 md:left-6 w-16 md:w-18 h-16 md:h-18 rotate-[8deg] z-20 drop-shadow-md"
                 />
+                {/* Selo monograma navy É */}
                 <img
                   src="/erikasantos-assets/seal-navy-e.png"
-                  alt="Selo monograma"
-                  className="absolute bottom-16 left-4 md:left-8 w-14 md:w-16 h-14 md:h-16 z-20 drop-shadow-md"
+                  alt="Selo É"
+                  className="absolute bottom-16 md:bottom-20 left-4 md:left-8 w-14 md:w-16 h-14 md:h-16 z-20 drop-shadow-md"
                 />
               </div>
 
-              {/* Text & Content Block */}
-              <div className="lg:col-span-7 space-y-6">
+              {/* Conteúdo Link na Bio */}
+              <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
                 {/* Eyebrow */}
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E7DDC9]/50 border border-[#E7DDC9] text-xs font-semibold tracking-wider uppercase text-[#102E4A]">
-                  <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-[#102E4A]">
+                <div className="inline-flex items-center gap-2">
+                  <svg viewBox="0 0 24 24" className="w-2.5 h-2.5 fill-[#6486AC]">
                     <path d="M12 0c1.1 7.4 4.6 10.9 12 12-7.4 1.1-10.9 4.6-12 12-1.1-7.4-4.6-10.9-12-12 7.4-1.1 10.9-4.6 12-12z" />
                   </svg>
-                  <span>Designer & Estrategista Visual</span>
+                  <span className="text-[10px] md:text-[11px] font-semibold text-[#4C6B8C] tracking-[2px] uppercase">
+                    DESIGNER GRÁFICO · IDENTIDADE & SOCIAL MEDIA
+                  </span>
                 </div>
 
-                {/* Main Headline */}
-                <h1 className="font-['Fraunces',Georgia,serif] text-4xl sm:text-5xl md:text-6xl text-[#102E4A] font-bold leading-[1.08] tracking-tight">
-                  Design com propósito, estratégia e alma.
+                {/* Wordmark Principal */}
+                <h1 className="font-['Fraunces',Georgia,serif] text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-bold text-[#102E4A] leading-[0.98] tracking-tight">
+                  érika designer
                 </h1>
 
                 {/* Keywords Bar */}
-                <div className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-semibold tracking-widest uppercase text-[#4C6B8C]">
-                  <span>Estratégia</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#6486AC]"></span>
-                  <span>Conexão</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#6486AC]"></span>
-                  <span>Criatividade</span>
+                <div className="flex items-center gap-3 text-xs font-semibold tracking-[1.6px] uppercase text-[#4C6B8C]">
+                  <span>ESTRATÉGIA</span>
+                  <span className="text-[#6486AC]">•</span>
+                  <span>CONEXÃO</span>
+                  <span className="text-[#6486AC]">•</span>
+                  <span>CRIATIVIDADE</span>
                 </div>
 
-                {/* Quote / Subtitle */}
-                <p className="text-base md:text-lg text-[#4C6B8C] font-normal leading-relaxed max-w-2xl">
-                  Transformo marcas em experiências visuais memoráveis. Da identidade visual completa ao posicionamento digital no Instagram, crio designs pensados para encantar e gerar resultados reais.
+                {/* Quote do Design */}
+                <p className="text-base md:text-lg text-[#4C6B8C] leading-relaxed max-w-xl font-normal">
+                  Sua marca merece transmitir o que você sente por ela, e eu cuido disso. Estratégia, identidade visual e presença digital pensadas para conectar e encantar.
                 </p>
 
-                {/* Social Buttons & Direct CTA */}
-                <div className="pt-4 flex flex-wrap items-center gap-4">
-                  <div className="flex items-center gap-2">
-                    {/* Instagram */}
+                {/* Botões Sociais e CTA Principal */}
+                <div className="flex flex-col sm:flex-row items-center gap-4 pt-2 w-full sm:w-auto">
+                  {/* Linha de Ícones Sociais (Instagram, WhatsApp, Pinterest, Behance) */}
+                  <div className="flex items-center gap-3">
                     <a
                       href="https://instagram.com"
                       target="_blank"
                       rel="noreferrer"
-                      className="w-11 h-11 rounded-full bg-[#FFFCF5] border border-[#E7DDC9] flex items-center justify-center text-[#102E4A] hover:bg-[#102E4A] hover:text-[#F9F3E3] transition shadow-xs"
+                      className="w-12 h-12 rounded-full bg-white border border-[#E7DDC9] flex items-center justify-center text-[#102E4A] hover:bg-[#102E4A] hover:text-[#F9F3E3] transition shadow-xs"
                       title="Instagram"
                     >
                       <svg className="w-5 h-5 fill-currentColor" viewBox="0 0 24 24">
                         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                       </svg>
                     </a>
-                    {/* WhatsApp */}
                     <a
                       href="https://wa.me/"
                       target="_blank"
                       rel="noreferrer"
-                      className="w-11 h-11 rounded-full bg-[#FFFCF5] border border-[#E7DDC9] flex items-center justify-center text-[#102E4A] hover:bg-[#102E4A] hover:text-[#F9F3E3] transition shadow-xs"
+                      className="w-12 h-12 rounded-full bg-white border border-[#E7DDC9] flex items-center justify-center text-[#102E4A] hover:bg-[#102E4A] hover:text-[#F9F3E3] transition shadow-xs"
                       title="WhatsApp"
                     >
                       <svg className="w-5 h-5 fill-currentColor" viewBox="0 0 24 24">
                         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
                       </svg>
                     </a>
-                    {/* Pinterest */}
                     <a
                       href="https://pinterest.com"
                       target="_blank"
                       rel="noreferrer"
-                      className="w-11 h-11 rounded-full bg-[#FFFCF5] border border-[#E7DDC9] flex items-center justify-center text-[#102E4A] hover:bg-[#102E4A] hover:text-[#F9F3E3] transition shadow-xs"
+                      className="w-12 h-12 rounded-full bg-white border border-[#E7DDC9] flex items-center justify-center text-[#102E4A] hover:bg-[#102E4A] hover:text-[#F9F3E3] transition shadow-xs"
                       title="Pinterest"
                     >
                       <svg className="w-5 h-5 fill-currentColor" viewBox="0 0 24 24">
@@ -337,11 +301,12 @@ export default function App() {
                     </a>
                   </div>
 
+                  {/* CTA Botão Pacotes */}
                   <button
                     onClick={() => setActiveTab('services')}
-                    className="inline-flex items-center gap-2 bg-[#102E4A] hover:bg-[#102E4A]/90 text-[#F9F3E3] px-6 py-3 rounded-full text-xs font-semibold tracking-wide transition shadow-sm hover:shadow"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-[#102E4A] hover:text-[#F9F3E3] text-[#102E4A] border border-[#102E4A] px-6 py-3.5 rounded-full text-xs font-semibold tracking-wide transition shadow-sm"
                   >
-                    <span>Conheça os Pacotes & Serviços</span>
+                    <span>Conheça os pacotes e valores</span>
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                       <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
@@ -350,19 +315,17 @@ export default function App() {
               </div>
             </div>
 
-            {/* Quick Links Section (Link na Bio) */}
-            <div className="pt-10 border-t border-[#E7DDC9]">
-              <div className="flex items-center justify-between mb-8">
-                <div>
-                  <h2 className="font-['Fraunces',Georgia,serif] text-2xl font-bold text-[#102E4A]">
-                    Links Rápidos & Acesso Direto
-                  </h2>
-                  <p className="text-xs text-[#4C6B8C] mt-1">Acesso direto aos canais de atendimento e propostas</p>
-                </div>
+            {/* Quick Links Section (Cards do Link na Bio) */}
+            <div className="pt-6 border-t border-[#E7DDC9]">
+              <div className="flex items-center justify-between mb-6">
+                <span className="text-[11px] font-semibold text-[#4C6B8C] tracking-[2px] uppercase">
+                  ACESSO RÁPIDO · LINKS NA BIO
+                </span>
+                <span className="text-xs text-[#4C6B8C]">Clique para navegar</span>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {/* Card 1 */}
+                {/* Quick Link 1: Ver o site completo */}
                 <div
                   onClick={() => setActiveTab('services')}
                   className="group bg-[#FFFCF5] hover:bg-white p-5 rounded-2xl border border-[#E7DDC9] hover:border-[#6486AC] shadow-xs hover:shadow-md transition cursor-pointer flex flex-col justify-between"
@@ -379,12 +342,12 @@ export default function App() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-sm text-[#102E4A]">Ver Serviços Completos</h3>
-                    <p className="text-xs text-[#4C6B8C] mt-1">Conheça todos os formatos e etapas</p>
+                    <h3 className="font-semibold text-sm text-[#102E4A]">Ver o site completo</h3>
+                    <p className="text-xs text-[#4C6B8C] mt-1">Portfólio, sobre e serviços</p>
                   </div>
                 </div>
 
-                {/* Card 2 */}
+                {/* Quick Link 2: Social Media */}
                 <div
                   onClick={() => {
                     setActiveTab('services')
@@ -403,12 +366,12 @@ export default function App() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-sm text-[#102E4A]">Social Media & Posts</h3>
-                    <p className="text-xs text-[#4C6B8C] mt-1">Feeds elegantes com engajamento</p>
+                    <h3 className="font-semibold text-sm text-[#102E4A]">Social Media</h3>
+                    <p className="text-xs text-[#4C6B8C] mt-1">Pacotes mensais para Instagram</p>
                   </div>
                 </div>
 
-                {/* Card 3 */}
+                {/* Quick Link 3: Identidade visual */}
                 <div
                   onClick={() => {
                     setActiveTab('services')
@@ -427,12 +390,12 @@ export default function App() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-sm text-[#102E4A]">Identidade Visual</h3>
-                    <p className="text-xs text-[#4C6B8C] mt-1">Branding exclusivo e memorável</p>
+                    <h3 className="font-semibold text-sm text-[#102E4A]">Identidade visual</h3>
+                    <p className="text-xs text-[#4C6B8C] mt-1">Branding do zero ou redesign</p>
                   </div>
                 </div>
 
-                {/* Card 4 */}
+                {/* Quick Link 4: Falar no WhatsApp */}
                 <a
                   href="https://wa.me/"
                   target="_blank"
@@ -451,7 +414,7 @@ export default function App() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-sm text-[#F9F3E3]">Falar no WhatsApp</h3>
-                    <p className="text-xs text-[#F9F3E3]/80 mt-1">Tire dúvidas e solicite orçamento</p>
+                    <p className="text-xs text-[#F9F3E3]/80 mt-1">Tire dúvidas ou orçamentos</p>
                   </div>
                 </a>
               </div>
@@ -462,25 +425,27 @@ export default function App() {
         {/* ======================= ABA 2: SERVIÇOS ======================= */}
         {activeTab === 'services' && (
           <div className="space-y-16">
-            {/* Page Header */}
+            {/* Header Serviços */}
             <div className="text-center max-w-3xl mx-auto space-y-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E7DDC9]/50 border border-[#E7DDC9] text-xs font-semibold tracking-wider uppercase text-[#102E4A]">
-                <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-[#102E4A]">
+              <div className="inline-flex items-center gap-2">
+                <svg viewBox="0 0 24 24" className="w-2.5 h-2.5 fill-[#6486AC]">
                   <path d="M12 0c1.1 7.4 4.6 10.9 12 12-7.4 1.1-10.9 4.6-12 12-1.1-7.4-4.6-10.9-12-12 7.4-1.1 10.9-4.6 12-12z" />
                 </svg>
-                <span>Serviços & Soluções</span>
+                <span className="text-[11px] font-semibold text-[#4C6B8C] tracking-[2px] uppercase">
+                  SERVIÇOS
+                </span>
               </div>
               <h1 className="font-['Fraunces',Georgia,serif] text-4xl sm:text-5xl text-[#102E4A] font-bold leading-tight">
-                Soluções completas para posicionar sua marca com elegância.
+                Design com propósito para marcas que desejam crescer.
               </h1>
               <p className="text-base text-[#4C6B8C] leading-relaxed">
-                Cada projeto é desenvolvido com metodologia exclusiva, aliando pesquisa aprofundada, conceito autoral e execução impecável.
+                Cada serviço é pensado para resolver uma necessidade real do seu posicionamento, aliando apelo visual de alto nível e estratégia comercial.
               </p>
             </div>
 
-            {/* Services Grid */}
+            {/* Grid 3 Serviços */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Service 1: Social Media */}
+              {/* Card 1: Social Media */}
               <div
                 className={`p-8 rounded-3xl bg-[#FFFCF5] border transition flex flex-col justify-between ${
                   selectedService === 'Social Media' ? 'border-[#102E4A] shadow-lg ring-1 ring-[#102E4A]' : 'border-[#E7DDC9] hover:border-[#6486AC]'
@@ -530,7 +495,7 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Service 2: Identidade Visual */}
+              {/* Card 2: Identidade Visual */}
               <div
                 className={`p-8 rounded-3xl bg-[#FFFCF5] border transition flex flex-col justify-between ${
                   selectedService === 'Identidade Visual' ? 'border-[#102E4A] shadow-lg ring-1 ring-[#102E4A]' : 'border-[#E7DDC9] hover:border-[#6486AC]'
@@ -545,7 +510,7 @@ export default function App() {
                   <div>
                     <h3 className="font-['Fraunces',Georgia,serif] text-2xl font-bold text-[#102E4A]">Identidade Visual</h3>
                     <p className="text-xs text-[#4C6B8C] mt-2 leading-relaxed">
-                      Criação de logotipo, paleta, tipografia e diretrizes de marca consistentes.
+                      Criação de logotipo, paleta, tipografia e diretrizes de marca completas e autorais.
                     </p>
                   </div>
                   <div className="border-t border-[#E7DDC9] pt-4 space-y-2.5">
@@ -580,7 +545,7 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Service 3: Consultoria & Direção */}
+              {/* Card 3: Consultoria & Direção */}
               <div
                 className={`p-8 rounded-3xl bg-[#FFFCF5] border transition flex flex-col justify-between ${
                   selectedService === 'Consultoria' ? 'border-[#102E4A] shadow-lg ring-1 ring-[#102E4A]' : 'border-[#E7DDC9] hover:border-[#6486AC]'
@@ -595,7 +560,7 @@ export default function App() {
                   <div>
                     <h3 className="font-['Fraunces',Georgia,serif] text-2xl font-bold text-[#102E4A]">Consultoria & Direção</h3>
                     <p className="text-xs text-[#4C6B8C] mt-2 leading-relaxed">
-                      Diagnóstico visual e direcionamento estratégico para elevar a percepção de valor da sua marca.
+                      Diagnóstico visual e direcionamento estratégico para elevar a percepção de valor.
                     </p>
                   </div>
                   <div className="border-t border-[#E7DDC9] pt-4 space-y-2.5">
@@ -631,10 +596,10 @@ export default function App() {
               </div>
             </div>
 
-            {/* Process Section */}
+            {/* Metodologia de Processo */}
             <div className="pt-12 border-t border-[#E7DDC9] space-y-8">
               <div className="text-center max-w-xl mx-auto space-y-2">
-                <span className="text-xs font-semibold text-[#6486AC] uppercase tracking-widest">Metodologia</span>
+                <span className="text-[11px] font-semibold text-[#6486AC] uppercase tracking-[2px]">PROCESSO</span>
                 <h2 className="font-['Fraunces',Georgia,serif] text-3xl font-bold text-[#102E4A]">
                   Como funciona nosso processo
                 </h2>
@@ -694,13 +659,15 @@ export default function App() {
         {/* ======================= ABA 3: CONTATO ======================= */}
         {activeTab === 'contact' && (
           <div className="space-y-12">
-            {/* Page Header */}
+            {/* Header Contato */}
             <div className="text-center max-w-2xl mx-auto space-y-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E7DDC9]/50 border border-[#E7DDC9] text-xs font-semibold tracking-wider uppercase text-[#102E4A]">
-                <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-[#102E4A]">
+              <div className="inline-flex items-center gap-2">
+                <svg viewBox="0 0 24 24" className="w-2.5 h-2.5 fill-[#6486AC]">
                   <path d="M12 0c1.1 7.4 4.6 10.9 12 12-7.4 1.1-10.9 4.6-12 12-1.1-7.4-4.6-10.9-12-12 7.4-1.1 10.9-4.6 12-12z" />
                 </svg>
-                <span>Contato & Briefing</span>
+                <span className="text-[11px] font-semibold text-[#4C6B8C] tracking-[2px] uppercase">
+                  CONTATO
+                </span>
               </div>
               <h1 className="font-['Fraunces',Georgia,serif] text-4xl sm:text-5xl text-[#102E4A] font-bold leading-tight">
                 Vamos transformar sua presença visual juntos?
@@ -903,7 +870,7 @@ export default function App() {
                   </svg>
                 </a>
 
-                {/* Hours Box */}
+                {/* Horário */}
                 <div className="p-5 rounded-2xl bg-[#E8EFF7]/60 border border-[#6486AC]/20 text-xs text-[#102E4A] space-y-1">
                   <div className="flex items-center gap-2 font-semibold">
                     <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
@@ -919,7 +886,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="mt-20 border-t border-[#E7DDC9] px-6 md:px-16 py-8 bg-[#F9F3E3]">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#4C6B8C]">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#4C6B8C]">
           <div className="flex items-center gap-2">
             <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-[#102E4A]">
               <path d="M12 0c1.1 7.4 4.6 10.9 12 12-7.4 1.1-10.9 4.6-12 12-1.1-7.4-4.6-10.9-12-12 7.4-1.1 10.9-4.6 12-12z" />
