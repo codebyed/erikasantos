@@ -1,3 +1,4 @@
+
 export function BadgeStage() {
   return (
     <div className="relative flex justify-center items-start pt-1 sm:pt-0 min-h-[380px] sm:min-h-[460px] md:min-h-[560px] w-full max-w-[360px] sm:max-w-[420px] md:max-w-none mx-auto overflow-visible">
@@ -11,6 +12,7 @@ export function BadgeStage() {
       >
         <path d="M0 110c60-70 140-100 220-110" fill="none" stroke="#6486AC" strokeWidth="1" />
       </svg>
+
       <svg
         viewBox="0 0 150 100"
         className="w-[100px] sm:w-[130px] md:w-[170px] h-[65px] sm:h-[80px] md:h-[110px] opacity-30 absolute right-0 sm:right-2 md:-right-4 top-28 sm:top-36 pointer-events-none -z-5"
@@ -22,12 +24,13 @@ export function BadgeStage() {
       <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-[#102E4A] absolute top-8 sm:top-12 left-6 sm:left-10 opacity-80 animate-pulse pointer-events-none">
         <path d="M12 0c1.1 7.4 4.6 10.9 12 12-7.4 1.1-10.9 4.6-12 12-1.1-7.4-4.6-10.9-12-12 7.4-1.1 10.9-4.6 12-12z" />
       </svg>
+
       <svg viewBox="0 0 24 24" className="w-4 h-4 fill-[#6486AC] absolute bottom-6 sm:bottom-8 right-8 sm:right-12 opacity-70 pointer-events-none">
         <path d="M12 0c1.1 7.4 4.6 10.9 12 12-7.4 1.1-10.9 4.6-12 12-1.1-7.4-4.6-10.9-12-12 7.4-1.1 10.9-4.6 12-12z" />
       </svg>
 
       {/* Crachá Suspenso Transparente com Balanço no Hover */}
-      <div className="relative z-10 flex flex-col items-center -mt-4 sm:-mt-6 md:-mt-10 hover-swing cursor-pointer group">
+      <div className="relative z-10 flex flex-col items-center -mt-7 sm:-mt-9 md:-mt-12 -translate-x-2 sm:-translate-x-3 md:-translate-x-4 hover-swing cursor-pointer group">
         {/* Cordão do crachá */}
         <div className="w-3.5 sm:w-4 h-6 sm:h-8 bg-gradient-to-b from-[#102E4A] via-[#102E4A]/80 to-[#6486AC] rounded-t-xs sm:rounded-t-sm shadow-xs mb-[-3px] sm:mb-[-4px] z-20 flex items-center justify-center">
           <div className="w-1.5 h-1.5 rounded-full bg-[#E7DDC9]"></div>
@@ -49,21 +52,25 @@ export function BadgeStage() {
         alt="Selo circular"
         className="absolute -top-2 sm:top-2 md:top-4 right-0 sm:right-2 md:right-4 w-20 sm:w-28 md:w-34 h-20 sm:h-28 md:h-34 -rotate-[8deg] z-20 drop-shadow-md hover:scale-105 transition-transform pointer-events-none sm:pointer-events-auto"
       />
+
       <img
         src="./erikasantos-assets/marble-blue-1.png"
         alt="Esfera mármore"
         className="absolute top-44 sm:top-52 md:top-60 -right-1 sm:right-0 md:-right-2 w-14 sm:w-20 md:w-26 h-14 sm:h-20 md:h-26 rotate-[10deg] z-20 drop-shadow-md pointer-events-none"
       />
+
       <img
         src="./erikasantos-assets/seal-gray.png"
         alt="Selo érika designer"
         className="absolute bottom-2 sm:bottom-4 md:bottom-6 right-2 sm:right-6 md:right-8 w-18 sm:w-24 md:w-30 h-18 sm:h-24 md:h-30 -rotate-[6deg] z-20 drop-shadow-md pointer-events-none sm:pointer-events-auto"
       />
+
       <img
         src="./erikasantos-assets/seal-cream-star.png"
         alt="Selo estrela"
         className="absolute top-10 sm:top-14 md:top-18 left-0 sm:left-2 md:left-6 w-12 sm:w-16 md:w-18 h-12 sm:h-16 md:h-18 rotate-[8deg] z-20 drop-shadow-md pointer-events-none sm:pointer-events-auto"
       />
+
       <img
         src="./erikasantos-assets/seal-navy-e.png"
         alt="Selo É"
