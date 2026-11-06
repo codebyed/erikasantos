@@ -1,20 +1,33 @@
 <!doctype html>
+<!-- Eu declaro o idioma da página como português do Brasil. -->
 <html lang="pt-BR">
+  <!-- Eu abro o head com as configurações e os links externos. -->
   <head>
+    <!-- Eu defino a codificação UTF-8 para os acentos aparecerem certo. -->
     <meta charset="UTF-8" />
+    <!-- Eu uso o selo navy como favicon. -->
     <link rel="icon" type="image/png" href="/erikasantos-assets/seal-navy-e.png" />
+    <!-- Eu uso o mesmo selo como ícone ao salvar na tela inicial do iPhone. -->
     <link rel="apple-touch-icon" href="/erikasantos-assets/seal-navy-e.png" />
+    <!-- Eu configuro o viewport para o layout responsivo. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Eu defino o título que aparece na aba do navegador. -->
     <title>Érika Santos · Designer & Estrategista Visual</title>
+    <!-- Eu abro a conexão com o servidor de fontes do Google. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- Eu abro a conexão com o servidor de arquivos de fonte. -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Eu carrego as fontes Fraunces e Poppins usadas no site. -->
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..900&family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
+  <!-- Eu aplico o fundo creme e o texto navy no body. -->
   <body class="bg-[#F9F3E3] text-[#102E4A] antialiased">
+    <!-- Eu deixo a div onde o React vai montar a aplicação. -->
     <div id="root"></div>
+    <!-- Eu carrego o entrypoint TypeScript da aplicação. -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

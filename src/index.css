@@ -1,95 +1,155 @@
+/* Eu importo o Tailwind v4 inteiro para ter as utilidades e o reset. */
 @import "tailwindcss";
 
+/* Eu defino as cores e fontes da marca como tokens do tema. */
 @theme {
+  /* Eu crio o token do azul-marinho principal. */
   --color-navy: #102E4A;
+  /* Eu crio o token do azul intermediário. */
   --color-blue: #6486AC;
+  /* Eu crio o token do creme de fundo. */
   --color-cream: #F9F3E3;
+  /* Eu crio o token do creme dos cartões. */
   --color-cream-card: #FFFCF5;
+  /* Eu crio o token do cinza dos selos. */
   --color-gray: #B1B2B6;
+  /* Eu crio o token de tinta para textos fortes. */
   --color-ink: #102E4A;
+  /* Eu crio o token de tinta suave para textos secundários. */
   --color-ink-soft: #4C6B8C;
+  /* Eu crio o token da linha que separa os blocos. */
   --color-line: #E7DDC9;
+  /* Eu defino a fonte de display (Fraunces). */
   --font-display: "Fraunces", Georgia, serif;
+  /* Eu defino a fonte de corpo (Poppins). */
   --font-body: "Poppins", system-ui, sans-serif;
 }
 
+/* Eu aplico o fundo creme e a fonte de corpo no body. */
 body {
+  /* Eu removo a margem padrão do navegador. */
   margin: 0;
+  /* Eu uso a fonte de corpo da marca. */
   font-family: var(--font-body);
+  /* Eu pinto o fundo com o creme da marca. */
   background-color: #F9F3E3;
+  /* Eu pinto o texto com o azul-marinho. */
   color: #102E4A;
+  /* Eu escondo qualquer rolagem horizontal acidental. */
   overflow-x: hidden;
+  /* Eu garanto que o body ocupe a largura toda. */
   width: 100%;
 }
 
+/* Eu ajusto o html para também não rolar na horizontal. */
 html {
+  /* Eu escondo a rolagem horizontal. */
   overflow-x: hidden;
+  /* Eu garanto a largura total. */
   width: 100%;
 }
 
+/* Eu crio o balanço do crachá quando ele é clicado. */
 @keyframes badge-swing {
+  /* Eu começo sem rotação. */
   0% {
+    /* Eu deixo o crachá reto. */
     transform: rotate(0deg);
   }
+  /* Eu giro para a direita. */
   20% {
+    /* Eu aplico 8 graus. */
     transform: rotate(8deg);
   }
+  /* Eu giro para a esquerda. */
   40% {
+    /* Eu aplico 7 graus negativos. */
     transform: rotate(-7deg);
   }
+  /* Eu reduzo o balanço para a direita. */
   60% {
+    /* Eu aplico 4 graus. */
     transform: rotate(4deg);
   }
+  /* Eu reduzo o balanço para a esquerda. */
   80% {
+    /* Eu aplico 2 graus negativos. */
     transform: rotate(-2deg);
   }
+  /* Eu termino no centro. */
   100% {
+    /* Eu volto para zero graus. */
     transform: rotate(0deg);
   }
 }
 
+/* Eu aplico o balanço quando o crachá recebe a classe. */
 .animate-badge-swing {
+  /* Eu rodo o keyframe por 2,2 segundos. */
   animation: badge-swing 2.2s ease-in-out;
 }
 
+/* Eu crio a animação de abertura do FAQ. */
 @keyframes faq-open {
+  /* Eu começo um pouco transparente e deslocado para cima. */
   from {
+    /* Eu começo invisível. */
     opacity: 0;
+    /* Eu começo 4px acima. */
     transform: translateY(-4px);
   }
+  /* Eu termino totalmente visível. */
   to {
+    /* Eu deixo opaco. */
     opacity: 1;
+    /* Eu volto para a posição final. */
     transform: translateY(0);
   }
 }
 
+/* Eu aplico a animação quando a resposta do FAQ abre. */
 .animate-faq-open {
+  /* Eu rodo o keyframe em 0,25 segundos. */
   animation: faq-open 0.25s ease-out;
 }
 
+/* Eu respeito quem prefere menos movimento. */
 @media (prefers-reduced-motion: reduce) {
+  /* Eu desligo a animação do FAQ. */
   .animate-faq-open {
+    /* Eu removo a animação. */
     animation: none;
   }
 }
 
+/* Eu crio a flutuação suave dos selos ao lado do crachá. */
 @keyframes seal-float {
+  /* Eu começo na posição normal. */
   0%,
   100% {
+    /* Eu não desloco o selo. */
     translate: 0 0;
   }
+  /* Eu subo o selo no meio do ciclo. */
   50% {
+    /* Eu desloco 10px para cima. */
     translate: 0 -10px;
   }
 }
 
+/* Eu aplico a flutuação padrão nos selos. */
 .animate-seal-float {
+  /* Eu rodo o keyframe em 6 segundos e repito para sempre. */
   animation: seal-float 6s ease-in-out infinite;
+  /* Eu aviso o navegador que o translate vai mudar. */
   will-change: translate;
 }
 
+/* Eu respeito quem prefere menos movimento. */
 @media (prefers-reduced-motion: reduce) {
+  /* Eu desligo a flutuação dos selos. */
   .animate-seal-float {
+    /* Eu removo a animação. */
     animation: none;
   }
 }
