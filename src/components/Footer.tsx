@@ -13,17 +13,14 @@ export function Footer() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center md:justify-end gap-1 sm:gap-4 text-center">
           <span>© 2026 Érika Santos · Todos os direitos reservados.</span>
-          <span>
-            Desenvolvido por{" "}
-            <a
-              href="https://codebyed.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[#102E4A] underline decoration-[#6486AC] font-semibold"
-            >
-              codebyed
-            </a>
-          </span>
+          <a
+            href="https://codebyed.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#102E4A] underline decoration-[#6486AC] font-semibold"
+          >
+            codebyed
+          </a>
         </div>
       </div>
     </footer>

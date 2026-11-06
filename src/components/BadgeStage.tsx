@@ -1,5 +1,21 @@
 
+import { useState, useRef, useEffect } from 'react'
+
 export function BadgeStage() {
+  const [isSwinging, setIsSwinging] = useState(false)
+  const badgeRef = useRef<HTMLDivElement>(null)
+
+  const handleClick = () => {
+    setIsSwinging(true)
+    setTimeout(() => setIsSwinging(false), 2200)
+  }
+
+  useEffect(() => {
+    if (badgeRef.current) {
+      badgeRef.current.style.transformOrigin = 'top center'
+    }
+  }, [])
+
   return (
     <div className="relative flex justify-center items-start pt-1 sm:pt-0 min-h-[380px] sm:min-h-[460px] md:min-h-[560px] w-full max-w-[360px] sm:max-w-[420px] md:max-w-none mx-auto overflow-visible">
 
@@ -37,7 +53,13 @@ export function BadgeStage() {
       </svg>
 
       {/* Crachá original com cordão integrado */}
-      <div className="relative z-10 flex justify-center items-center -mt-4 sm:-mt-6 md:-mt-10 -translate-x-2 sm:-translate-x-3 md:-translate-x-4 hover-swing cursor-pointer group">
+      <div
+        ref={badgeRef}
+        onClick={handleClick}
+        className={`relative z-10 flex justify-center items-center -mt-4 sm:-mt-6 md:-mt-10 -translate-x-2 sm:-translate-x-3 md:-translate-x-4 cursor-pointer transition-transform duration-400 ease-out ${
+          isSwinging ? 'animate-badge-swing' : ''
+        }`}
+      >
         <div className="bg-transparent filter drop-shadow-[0_15px_20px_rgba(16,46,74,0.18)]">
           <img
             src="./erikasantos-assets/badge-erika-trim.png"

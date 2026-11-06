@@ -45,7 +45,7 @@ export function ServicesPage({ selectedService, onSelectService, onNavigate }: S
             }`}
           >
             <div className="space-y-4 sm:space-y-5">
-              <div className="w-12 h-12 rounded-2xl bg-[#E8EFF7] flex items-center justify-center text-[#102E4A]">
+              <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-[#102E4A]">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   {service.icon === 'social' && (
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />

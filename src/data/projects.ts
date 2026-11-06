@@ -2,15 +2,6 @@ import type { Project } from '../types'
 
 export const PROJECTS: Project[] = [
   {
-    id: 'feed-erika',
-    title: 'Feed & Presença Digital',
-    category: 'Social Media',
-    description: 'Direção de arte completa para feed do Instagram, unindo estética minimalista, contraste elegante e copywriting visual.',
-    image: './images/gallery/feed-portfolio.jpeg',
-    year: '2026',
-    tags: ['Instagram', 'Carrosséis', 'Posicionamento'],
-  },
-  {
     id: 'branding-autoral',
     title: 'Branding & Identidade Autoral',
     category: 'Identidade Visual',
@@ -25,7 +16,7 @@ export const PROJECTS: Project[] = [
     category: 'Editorial',
     description: 'Criação de insígnias, selos circulares e monogramas de alto valor para aplicações físicas e digitais.',
     image: './images/gallery/selo-destaque.png',
-    year: '2025',
+    year: '2026',
     tags: ['Emblemas', 'Selos', 'Acabamentos'],
   },
   {
@@ -43,7 +34,7 @@ export const PROJECTS: Project[] = [
     category: 'Editorial',
     description: 'Cartões de visita táteis, embalagens personalizadas e manuais impressos com atenção extrema a detalhes.',
     image: './images/gallery/editorial-design.png',
-    year: '2025',
+    year: '2026',
     tags: ['Impressos', 'Papelaria', 'Embalagens'],
   },
   {

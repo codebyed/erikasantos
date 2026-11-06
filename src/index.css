@@ -48,11 +48,6 @@ html {
   }
 }
 
-.hover-swing {
-  transform-origin: top center;
-  transition: transform 0.4s ease-out;
-}
-
-.hover-swing:hover {
-  animation: badge-swing 2.2s ease-in-out infinite;
+.animate-badge-swing {
+  animation: badge-swing 2.2s ease-in-out;
 }
