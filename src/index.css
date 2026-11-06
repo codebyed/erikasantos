@@ -51,3 +51,24 @@ html {
 .animate-badge-swing {
   animation: badge-swing 2.2s ease-in-out;
 }
+
+@keyframes faq-open {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-faq-open {
+  animation: faq-open 0.25s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-faq-open {
+    animation: none;
+  }
+}

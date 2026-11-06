@@ -220,9 +220,14 @@ export function BioPage({ onNavigate }: BioPageProps) {
               key={index}
               className="group bg-white rounded-2xl border border-[#E7DDC9] hover:border-[#6486AC] transition-colors overflow-hidden"
               open={openFaq === index}
-              onToggle={() => setOpenFaq(openFaq === index ? null : index)}
             >
-              <summary className="flex items-center justify-between gap-4 p-5 sm:p-6 cursor-pointer list-none">
+              <summary
+                onClick={(event) => {
+                  event.preventDefault()
+                  setOpenFaq((current) => (current === index ? null : index))
+                }}
+                className="flex items-center justify-between gap-4 p-5 sm:p-6 cursor-pointer list-none"
+              >
                 <h3 className="font-semibold text-sm sm:text-base text-[#102E4A] leading-snug pr-8">
                   {faq.question}
                 </h3>
