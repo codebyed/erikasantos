@@ -185,7 +185,7 @@ export function BioPage({ onNavigate }: BioPageProps) {
             href="https://wa.me/?text=Ol%C3%A1%2C%20%C3%89rika!%20Vim%20pelo%20seu%20site%20erikasantos.com.br"
             target="_blank"
             rel="noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#102E4A] hover:bg-[#102E4A]/90 text-[#F9F3E3] border border-[#102E4A] px-5 sm:px-6 py-3 sm:py-3.5 rounded-full text-xs font-semibold tracking-wide transition shadow-sm cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1EBE5D] text-[#102E4A] border border-[#25D366] hover:border-[#1EBE5D] px-5 sm:px-6 py-3 sm:py-3.5 rounded-full text-xs font-semibold tracking-wide transition shadow-sm cursor-pointer"
           >
             <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
