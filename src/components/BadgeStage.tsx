@@ -47,7 +47,8 @@ export function BadgeStage() {
 
       <svg
         viewBox="0 0 24 24"
-        className="w-4 h-4 fill-[#6486AC] absolute bottom-6 sm:bottom-8 right-8 sm:right-12 opacity-70 pointer-events-none"
+        className="w-4 h-4 fill-[#6486AC] absolute bottom-6 sm:bottom-8 right-8 sm:right-12 opacity-70 animate-pulse pointer-events-none"
+        style={{ animationDelay: '-1.6s' }}
       >
         <path d="M12 0c1.1 7.4 4.6 10.9 12 12-7.4 1.1-10.9 4.6-12 12-1.1-7.4-4.6-10.9-12-12 7.4-1.1 10.9-4.6 12-12z" />
       </svg>
@@ -73,31 +74,36 @@ export function BadgeStage() {
       <img
         src="./erikasantos-assets/seal-blue-circular.png"
         alt="Selo circular"
-        className="absolute -top-2 sm:top-2 md:top-4 right-0 sm:right-2 md:right-4 w-20 sm:w-28 md:w-34 h-20 sm:h-28 md:h-34 -rotate-[8deg] z-20 drop-shadow-md hover:scale-105 transition-transform pointer-events-none sm:pointer-events-auto"
+        className="animate-seal-float absolute -top-2 sm:top-2 md:top-4 right-0 sm:right-2 md:right-4 w-20 sm:w-28 md:w-34 h-20 sm:h-28 md:h-34 -rotate-[8deg] z-20 drop-shadow-md hover:scale-110 hover:z-30 hover:drop-shadow-xl transition-transform duration-300 pointer-events-none sm:pointer-events-auto"
+        style={{ animationDuration: '6s', animationDelay: '-1.2s' }}
       />
 
       <img
         src="./erikasantos-assets/marble-blue-1.png"
         alt="Esfera mármore"
-        className="absolute top-44 sm:top-52 md:top-60 -right-1 sm:right-0 md:-right-2 w-14 sm:w-20 md:w-26 h-14 sm:h-20 md:h-26 rotate-[10deg] z-20 drop-shadow-md pointer-events-none"
+        className="animate-seal-float absolute top-44 sm:top-52 md:top-60 -right-1 sm:right-0 md:-right-2 w-14 sm:w-20 md:w-26 h-14 sm:h-20 md:h-26 rotate-[10deg] z-20 drop-shadow-md hover:scale-110 hover:z-30 hover:drop-shadow-xl transition-transform duration-300 pointer-events-none sm:pointer-events-auto"
+        style={{ animationDuration: '5.2s', animationDelay: '-2.4s' }}
       />
 
       <img
         src="./erikasantos-assets/seal-gray.png"
         alt="Selo érika designer"
-        className="absolute bottom-2 sm:bottom-4 md:bottom-6 right-2 sm:right-6 md:right-8 w-18 sm:w-24 md:w-30 h-18 sm:h-24 md:h-30 -rotate-[6deg] z-20 drop-shadow-md pointer-events-none sm:pointer-events-auto"
+        className="animate-seal-float absolute bottom-2 sm:bottom-4 md:bottom-6 right-2 sm:right-6 md:right-8 w-18 sm:w-24 md:w-30 h-18 sm:h-24 md:h-30 -rotate-[6deg] z-20 drop-shadow-md hover:scale-110 hover:z-30 hover:drop-shadow-xl transition-transform duration-300 pointer-events-none sm:pointer-events-auto"
+        style={{ animationDuration: '7s', animationDelay: '-0.8s' }}
       />
 
       <img
         src="./erikasantos-assets/seal-cream-star.png"
         alt="Selo estrela"
-        className="absolute top-10 sm:top-14 md:top-18 left-0 sm:left-2 md:left-6 w-12 sm:w-16 md:w-18 h-12 sm:h-16 md:h-18 rotate-[8deg] z-20 drop-shadow-md pointer-events-none sm:pointer-events-auto"
+        className="animate-seal-float absolute top-10 sm:top-14 md:top-18 left-0 sm:left-2 md:left-6 w-12 sm:w-16 md:w-18 h-12 sm:h-16 md:h-18 rotate-[8deg] z-20 drop-shadow-md hover:scale-110 hover:z-30 hover:drop-shadow-xl transition-transform duration-300 pointer-events-none sm:pointer-events-auto"
+        style={{ animationDuration: '4.8s', animationDelay: '-3s' }}
       />
 
       <img
         src="./erikasantos-assets/seal-navy-e.png"
         alt="Selo É"
-        className="absolute bottom-10 sm:bottom-16 md:bottom-20 left-1 sm:left-4 md:left-8 w-11 sm:w-14 md:w-16 h-11 sm:h-14 md:h-16 z-20 drop-shadow-md pointer-events-none sm:pointer-events-auto"
+        className="animate-seal-float absolute bottom-10 sm:bottom-16 md:bottom-20 left-1 sm:left-4 md:left-8 w-11 sm:w-14 md:w-16 h-11 sm:h-14 md:h-16 z-20 drop-shadow-md hover:scale-110 hover:z-30 hover:drop-shadow-xl transition-transform duration-300 pointer-events-none sm:pointer-events-auto"
+        style={{ animationDuration: '6.4s', animationDelay: '-1.8s' }}
       />
     </div>
   )
