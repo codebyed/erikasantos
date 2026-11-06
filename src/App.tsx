@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { BackButton } from './components/BackButton'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { BioPage } from './pages/BioPage'
@@ -9,13 +10,23 @@ import type { TabType } from './types'
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<TabType>('home')
+  const [navHistory, setNavHistory] = useState<TabType[]>([])
   const [selectedService, setSelectedService] = useState('Social Media')
 
   const handleNavigate = (tab: TabType, service?: string) => {
     if (service) {
       setSelectedService(service)
     }
-    setActiveTab(tab)
+    if (tab !== activeTab) {
+      setNavHistory((previous) => [...previous, activeTab].slice(-20))
+      setActiveTab(tab)
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const handleBack = () => {
+    setActiveTab(navHistory[navHistory.length - 1] ?? 'home')
+    setNavHistory((previous) => previous.slice(0, -1))
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
@@ -25,6 +36,11 @@ export default function App() {
         <Header activeTab={activeTab} onSelectTab={handleNavigate} />
 
         <main className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 py-6 sm:py-8 md:py-12">
+          {activeTab !== 'home' && (
+            <div className="mb-6 sm:mb-8">
+              <BackButton onClick={handleBack} />
+            </div>
+          )}
           {activeTab === 'home' && <BioPage onNavigate={handleNavigate} />}
           {activeTab === 'gallery' && <GalleryPage />}
           {activeTab === 'services' && (
