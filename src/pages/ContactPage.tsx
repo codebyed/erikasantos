@@ -188,9 +188,9 @@ export function ContactPage({ initialService = 'Social Media' }: ContactPageProp
             </svg>
           </a>
 
-          {/* E-mail contato@erikasantos.com.br */}
+          {/* E-mail contato@erikasantos.design */}
           <a
-            href="mailto:contato@erikasantos.com.br"
+            href="mailto:contato@erikasantos.design"
             className="p-4 sm:p-5 rounded-2xl bg-[#FFFCF5] hover:bg-white border border-[#E7DDC9] hover:border-[#6486AC] transition flex items-center justify-between group"
           >
             <div className="flex items-center gap-3.5 sm:gap-4">
@@ -201,7 +201,7 @@ export function ContactPage({ initialService = 'Social Media' }: ContactPageProp
               </div>
               <div>
                 <h4 className="font-semibold text-sm text-[#102E4A]">E-mail Profissional</h4>
-                <p className="text-xs text-[#4C6B8C]">contato@erikasantos.com.br</p>
+                <p className="text-xs text-[#4C6B8C]">contato@erikasantos.design</p>
               </div>
             </div>
             <svg className="w-4 h-4 text-[#4C6B8C] group-hover:translate-x-1 transition-transform shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
